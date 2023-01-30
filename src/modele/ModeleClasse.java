@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import controleur.Classe;
 
 public class ModeleClasse {
-    private static Bdd uneBdd = new Bdd("localhost", "orange_250_23", "root", "");
+    private static Bdd uneBdd = new Bdd("localhost", "site_cfa", "root", "");
 
     public static void insertClasse(Classe uneClasse)
     {

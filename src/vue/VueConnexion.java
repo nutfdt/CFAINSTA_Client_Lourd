@@ -38,9 +38,9 @@ public class VueConnexion extends JFrame implements ActionListener, KeyListener{
         this.setBounds(200, 200, 700, 300);
         this.setLayout(null);
 
-        ImageIcon logo = new ImageIcon ("src/images/orange_logo.png");
+        ImageIcon logo = new ImageIcon ("src/images/cfainsta_logo.png");
         JLabel monLogo = new JLabel(logo);
-        monLogo.setBounds(10, 10, 240, 240);
+        monLogo.setBounds(10, 10, 340, 340);
         this.add(monLogo);
 
         //construction du panel connexion

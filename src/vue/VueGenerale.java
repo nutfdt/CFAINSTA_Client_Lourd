@@ -1,7 +1,9 @@
 package vue;
 
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.event.ActionEvent;
+import java.awt.GridLayout;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
@@ -22,17 +24,16 @@ public class VueGenerale extends JFrame implements ActionListener {
     private JButton btProfil = new JButton("Mon Profil");
     private JButton btQuitter = new JButton("Quitter");
 
-    private static PanelProfil unPanelProfil;
-    private static PanelClasses unPanelClasses = new PanelClasses();
-    private static PanelProfesseurs unPanelProfesseurs = new PanelProfesseurs();
-    private static PanelEtudiants unPanelEtudiants = new PanelEtudiants();
-    private static PanelAdministrations unPanelAdministrations = new PanelAdministrations();
+    private static PanelProfil unPanelProfil = new PanelProfil();
+    private static PanelClasses unPanelClasse = new PanelClasses();
+    private static PanelProfesseurs unPanelProfesseur = new PanelProfesseurs();
+    private static PanelEtudiants unPanelEtudiant = new PanelEtudiants();
+    private static PanelAdministrations unPanelAdministration = new PanelAdministrations();
 
     public VueGenerale (Administration unAdministrateur) {
 
         // Instanciation du panel Profil
 
-        unPanelProfil = new PanelProfil(unAdministrateur);
         this.setTitle("Gestion de la scolarité");
         this.setResizable(false);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -43,7 +44,7 @@ public class VueGenerale extends JFrame implements ActionListener {
         // Construction du panel Menu
         this.panelMenu.setBounds(100, 20, 900, 40);
         this.panelMenu.setBackground(new Color (255, 184, 51 ));
-        this.panelMenu.setLayout(new GridLayout(1, 6));
+        this.panelMenu.setLayout(new GridLayout(1, 7));
         this.panelMenu.add(this.btProfil);
         this.panelMenu.add(this.btClasses);
         this.panelMenu.add(this.btProfesseurs);
@@ -70,10 +71,11 @@ public class VueGenerale extends JFrame implements ActionListener {
 
         //insertion des panels dans la fenêtre
         this.add(unPanelProfil);
-        this.add(unPanelClasses);
-        this.add(unPanelProfesseurs);
-        this.add(unPanelEtudiants);
-        this.add(unPanelAdministrations);
+        this.add(unPanelClasse);
+        this.add(unPanelProfesseur);
+        this.add(unPanelEtudiant);
+        this.add(unPanelAdministration);
+
 
         this.setVisible(false);
     }
@@ -81,17 +83,17 @@ public class VueGenerale extends JFrame implements ActionListener {
     public static void activerPanel (int choix)
     {
         unPanelProfil.setVisible(false);
-        unPanelClasses.setVisible(false);
-        unPanelProfesseurs.setVisible(false);
-        unPanelEtudiants.setVisible(false);
-        unPanelAdministrations.setVisible(false);
+        unPanelClasse.setVisible(false);
+        unPanelProfesseur.setVisible(false);
+        unPanelEtudiant.setVisible(false);
+        unPanelAdministration.setVisible(false);
         switch (choix)
         {
             case 1 : unPanelProfil.setVisible(true); break;
-            case 2 : unPanelClasses.setVisible(true); break;
-            case 3 : unPanelProfesseurs.setVisible(true); break;
-            case 4 : unPanelEtudiants.setVisible(true); break;
-            case 5 : unPanelAdministrations.setVisible(true); break;
+            case 2 : unPanelClasse.setVisible(true); break;
+            case 3 : unPanelProfesseur.setVisible(true); break;
+            case 4 : unPanelEtudiant.setVisible(true); break;
+            case 5 : unPanelAdministration.setVisible(true); break;
         }
     }
 

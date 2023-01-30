@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import controleur.Administration;
 
 public class ModeleAdministration {
-    private static Bdd uneBdd = new Bdd("localhost", "orange_250_23", "root", "");
+    private static Bdd uneBdd = new Bdd("localhost", "site_cfa", "root", "");
 
     public static void insertAdministrateur(Administration unAdministrateur)
     {

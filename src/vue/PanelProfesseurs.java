@@ -1,5 +1,9 @@
 package vue;
 
-public class PanelProfesseurs {
+import java.awt.Color;
 
+public class PanelProfesseurs extends PanelPrincipal{
+	public PanelProfesseurs() {
+		super(Color.white);
+	}
 }
